@@ -1,0 +1,374 @@
+
+/* ================== GLOBAL ================== */
+html {
+  scroll-padding-top: 140px; /* header offset for smooth scroll */
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #1e1e1f;
+  color: #fff;
+  padding-top: 100px; /* height of fixed header */
+}
+
+/* ================== HEADER ================== */
+.hero {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #121313, #444);
+  padding: 20px 0;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero .name {
+  color: #ffe082;
+}
+
+/* NAVIGATION */
+.hero nav {
+  margin-top: 10px;
+}
+
+.hero nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.hero nav a:hover {
+  color: #ffe082;
+}
+
+/* DOWNLOAD CV BUTTON */
+.download-cv {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: #00c2ff;
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.download-cv:hover {
+  background: #00a3cc;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 2000;
+}
+
+.menu-toggle span {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ================== PORTFOLIO WRAPPER ================== */
+.portfolio-wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.portfolio-content {
+  flex: 3;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 50px;
+}
+
+.section h1,
+.section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 35px;
+  color: #4ad8fc;
+}
+
+/* ================== ABOUT ================== */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4facfe;
+}
+
+.about-text {
+  max-width: 500px;
+  font-size: 1.1rem;
+  color: #e5e5e5;
+}
+
+/* ================== SKILLS ================== */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skill-card {
+  background: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 250px;
+  font-weight: 600;
+}
+
+.skill-bar {
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.skill-progress {
+  height: 10px;
+  background: #4facfe;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+/* ================== PROJECTS ================== */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  background: #fff;
+  color: #000;
+  flex: 1 1 30%;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card a {
+  text-decoration: none;
+  background: #007bff;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-top: auto;
+  transition: background 0.3s;
+}
+
+.project-card a:hover {
+  background: #0056b3;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  padding: 20px;
+  border-radius: 15px;
+  height: fit-content;
+  color: #fff;
+}
+
+.promotion-card {
+  background: rgba(255,255,255,0.15);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.promotion-card:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-5px);
+}
+
+.promotion-card a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #fff;
+  color: #007bff;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.promotion-card a:hover {
+  background: #0056b3;
+  color: #fff;
+}
+
+/* ================== CONTACT ================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 450px;
+  background: #706904;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #6e3636;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #4a4aff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #2222ff;
+}
+
+#contact ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#contact li {
+  margin: 12px 0;
+}
+
+#contact a {
+  color: #4facfe;
+  text-decoration: none;
+}
+
+/* ================== EDUCATION & CERTIFICATES ================== */
+.education-card,
+.certificate-card {
+  background: #54e0f3;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.education-card h3,
+.certificate-card h3 {
+  margin-bottom: 5px;
+  color: #0e0d0d;
+}
+
+.certificate-card a {
+  color: #02172e;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ================== FOOTER ================== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #000;
+  color: #fff;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1200px) {
+  .portfolio-wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .projects {
+    flex-direction: column;
+  }
+  .project-card {
+    flex: 1 1 100%;
+  }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 160px;
+  }
+  nav.active {
+    display: flex;
+  }
+}
